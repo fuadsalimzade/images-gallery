@@ -3,6 +3,7 @@ import Header from './components/Header';
 import Search from './components/Search';
 import { useState } from 'react';
 
+const UNSPLASH_API = process.env.REACT_APP_UNSPLASH_API;
 
 function App() {
   const [word, setWord] = useState();
@@ -10,7 +11,16 @@ function App() {
   const handleSearchSubmit = (e) => {
     e.preventDefault();
     console.log(word);
+    fetch(`https://api.unsplash.com//photos/random/?query=${word}&client_id=${UNSPLASH_API}`)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data)
+      })
+      .catch((err) => {
+        console.log(err)
+      })
   }
+
 
   return (
     <div className="App">
