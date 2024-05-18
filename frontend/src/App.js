@@ -19,9 +19,9 @@ function App() {
       .catch((err) => {
         console.log(err)
       })
+    setWord('')
   }
-
-
+  
   return (
     <div className="App">
       <Header title="Images Gallery"/>
