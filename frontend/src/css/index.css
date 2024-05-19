@@ -6,3 +6,20 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.google-logo-button {
+}
+
+.google-logo-button:hover {
+  background: linear-gradient(90deg, #4285F4, #EA4335, #FBBC05, #34A853);
+  color: white; /* Make sure the icon or text is visible */
+  border: none; /* Remove any border if present */
+  padding: 0.5rem 1rem; /* Adjust padding as needed */
+  /* Darker shades for hover effect */
+}
+
+.google-logo-button:focus {
+  outline: none; /* Remove default focus outline */
+  box-shadow: 0 0 0 0.2rem rgba(66, 133, 244, 0.5); /* Custom focus shadow */
+}
+

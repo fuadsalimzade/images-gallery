@@ -18,7 +18,9 @@ function App() {
     )
       .then((res) => res.json())
       .then((data) => {
-        setImages([{ ...data, title: word }, ...images]);
+        if (data.urls && data.urls.small) {
+          setImages([{ ...data, title: word }, ...images]);
+        }
       })
       .catch((err) => {
         console.log(err);
