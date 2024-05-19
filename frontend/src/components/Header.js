@@ -10,7 +10,7 @@ const Header = ({ title }) => {
   return (
     <Navbar style={navbarStyle} data-bs-theme="light">
       <Container className="justify-content-center">
-        <Logo />
+        <Logo alt={title} />
       </Container>
     </Navbar>
   );
