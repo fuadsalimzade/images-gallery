@@ -15,7 +15,7 @@ const Welcome = () => (
       Start by searching a topic.
     </p>
     <p>
-      <Button bsStyle="primary" href="https://unsplash.com">
+      <Button bsstyle="primary" href="https://unsplash.com">
         Learn more
       </Button>
     </p>
