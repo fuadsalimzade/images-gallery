@@ -18,21 +18,18 @@ CORS(app)
 
 app.config["DEBUG"] = DEBUG
 
+
 @app.route("/new-image")
 def new_image():
     word = request.args.get("query")
 
-    headers = {
-        "Authorization": f"Client-ID {UNSPLASH_KEY}",
-        "Accept-Version": "v1"
-    }
-    payload = {
-        "query": word
-    }
+    headers = {"Authorization": f"Client-ID {UNSPLASH_KEY}", "Accept-Version": "v1"}
+    payload = {"query": word}
     response = requests.get(url=UNSPLASH_URL, headers=headers, params=payload)
     response.headers["Access-Control-Allow-Origin"] = "*"
     data = response.json()
     return data
+
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5050)

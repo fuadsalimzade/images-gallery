@@ -5,6 +5,11 @@
         "javascriptreact"
     ],
     "editor.codeActionsOnSave": {
-        "source.fixAll.eslint": true 
+        "source.fixAll.eslint": "explicit"
+    },
+    "pylint.args": ["--max-line-length=88"],
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.formatOnSave": true,
     }
 }
