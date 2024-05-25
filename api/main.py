@@ -35,9 +35,11 @@ def new_image():
     return data
 
 
-@app.route("/images", methods=["GET", "POST"])
+@app.route("/images", methods=["GET", "POST", "DELETE"])
 def images():
     if request.method == "GET":
+        if images_collection.count_documents({}) == 0:
+            return "Collection is empty"
         images_file = images_collection.find({})
         return jsonify([img for img in images_file])
 
@@ -46,6 +48,12 @@ def images():
         image["_id"] = image.get("id")
         inserted_id = images_collection.insert_one(image).inserted_id
         return jsonify({"inserted_id": inserted_id})
+
+    if request.method == "DELETE":
+        image = request.get_json()
+        image_id = image.get("_id")
+        images_collection.delete_one({"_id": image_id})
+        return f"image_id {image_id} deleted"
 
 
 if __name__ == "__main__":
