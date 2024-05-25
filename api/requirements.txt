@@ -3,6 +3,7 @@ blinker==1.8.2
 certifi==2024.2.2
 chardet==4.0.0
 click==8.1.7
+dnspython==2.6.1
 flask==3.0.3
 flask-cors==3.0.10
 idna==2.10
@@ -12,7 +13,9 @@ markupsafe==2.1.5
 mypy-extensions==1.0.0
 pathspec==0.12.1
 pycodestyle==2.11.1
+pymongo==4.7.2
 python-dotenv==1.0.1
 requests==2.25.1
 urllib3==1.26.18
 werkzeug==3.0.3
+
