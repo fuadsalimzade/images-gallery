@@ -8,7 +8,7 @@ const ImageCard = ({ image, handleDelete }) => {
       <Card.Body>
         <Card.Title>{image.title}</Card.Title>
         <Card.Text>{image.alt_description}</Card.Text>
-        <Button variant="primary" onClick={() => handleDelete(image.id)}>
+        <Button variant="primary" onClick={() => handleDelete(image)}>
           Delete
         </Button>
       </Card.Body>
