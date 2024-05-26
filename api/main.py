@@ -51,9 +51,9 @@ def images():
 
     if request.method == "DELETE":
         image = request.get_json()
-        image_id = image.get("_id")
+        image_id = image.get("id")
         images_collection.delete_one({"_id": image_id})
-        return f"image_id {image_id} deleted"
+        return {"Delete": image["id"]}
 
 
 if __name__ == "__main__":
