@@ -24,7 +24,7 @@ const Search = ({ word, setWord, handleSubmit }) => {
                   className="rounded-pill google-logo-button"
                   type="submit"
                 >
-                  <IoIosSearch />
+                  <IoIosSearch></IoIosSearch>
                 </Button>
               </Col>
             </Form.Row>

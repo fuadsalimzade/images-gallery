@@ -39,7 +39,7 @@ def new_image():
 def images():
     if request.method == "GET":
         if images_collection.count_documents({}) == 0:
-            return "Collection is empty"
+            return []
         images_file = images_collection.find({})
         return jsonify([img for img in images_file])
 
