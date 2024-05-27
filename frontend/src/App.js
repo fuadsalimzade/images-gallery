@@ -41,11 +41,16 @@ function App() {
     setWord('');
   };
 
-  const handleSaveImage = async (image) => {
+  const handleSaveImage = async (image_saved) => {
     try {
+      setImages(
+        images.map((image) =>
+          image.id === image_saved.id ? { ...image, saved: true } : image,
+        ),
+      );
       await axios.post(
         `${API_URL}/images`,
-        { ...image, saved: true },
+        { ...image_saved, saved: true },
         {
           headers: {
             'Content-Type': 'application/json', // Use single quotes
@@ -65,8 +70,7 @@ function App() {
         },
         data: image_del,
       });
-      const newImageList = images.filter((image) => image.id !== image_del.id);
-      setImages(newImageList);
+      setImages(images.filter((image) => image.id !== image_del.id));
     } catch (error) {
       console.log(error);
     }

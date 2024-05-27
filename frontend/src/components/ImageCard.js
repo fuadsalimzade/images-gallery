@@ -9,9 +9,11 @@ const ImageCard = ({ image, handleDelete, handleSave }) => {
         src={image.urls.small}
         style={{ height: '18rem' }}
       />
-      <Card.Body>
+      <Card.Body style={{ height: '12rem' }}>
         <Card.Title>{image.title?.toUpperCase()}</Card.Title>
-        <Card.Text>{image.alt_description}</Card.Text>
+        <Card.Text style={{ height: '3rem' }} className="mt-4">
+          {image.alt_description}
+        </Card.Text>
         <ButtonGroup className="d-flex justify-content-center mt-2">
           <Button variant="primary" onClick={() => handleDelete(image)} active>
             Delete
